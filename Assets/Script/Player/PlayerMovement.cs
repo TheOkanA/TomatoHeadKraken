@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator animator;
+    public bool isMoving;
     
     private float horizontal = 0;
     [SerializeField] private float speed = 4;
@@ -17,6 +19,17 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
+
+        if(rb.velocity.x != 0)
+        {
+            isMoving = true;   
+        }
+        else
+        {
+            isMoving = false;
+        }
+
+        animator.SetBool("isMoving", isMoving);
 
         if (Input.GetKeyDown(KeyCode.W))
         {
