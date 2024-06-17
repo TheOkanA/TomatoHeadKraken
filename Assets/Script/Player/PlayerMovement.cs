@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     
     private float horizontal = 0;
     [SerializeField] private float speed = 5;
-    [SerializeField] private float jumpPower = 16;
+    [SerializeField] private float jumpPower = 5;
     [SerializeField] private bool isFacingRight = true;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -29,10 +29,12 @@ public class PlayerMovement : MonoBehaviour
         if(Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer))
         {
             isGround = true;
+            speed = 5;
         }
         else
         {
             isGround = false;
+            speed = 3;
         }
 
         Flip();
