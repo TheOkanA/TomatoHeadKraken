@@ -7,6 +7,7 @@ TagManager:
   - Weak Point
   - Enemy
   - AttackArea
+  - HighDamage
   layers:
   - Default
   - TransparentFX
