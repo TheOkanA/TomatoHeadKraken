@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -7,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject boomArea;
     public EnemyMovement enemyMovement;
     public Rigidbody2D rb;
+    public SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -34,6 +36,7 @@ public class EnemyHealth : MonoBehaviour
     private void BombArea()
     {
         boomArea.SetActive(true);
+        spriteRenderer.enabled = false;
     }
 
     private void EnemyDestroy()

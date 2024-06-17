@@ -7,14 +7,16 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public bool isMoving;
+    public PlayerHealthBar playerHealthBar;
     
     private float horizontal = 0;
-    [SerializeField] private float speed = 4;
+    [SerializeField] private float speed = 3;
     [SerializeField] private float jumpPower = 5;
     [SerializeField] private bool isFacingRight = true;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool isGround;
+    [SerializeField] private bool canBeDamaged = true;
 
     void Update()
     {
@@ -42,12 +44,12 @@ public class PlayerMovement : MonoBehaviour
         if(Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer))
         {
             isGround = true;
-            speed = 5;
+            speed = 3;
         }
         else
         {
             isGround = false;
-            speed = 3;
+            speed = 2;
         }
 
         Flip();
@@ -68,4 +70,15 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("HighDamage") && canBeDamaged)
+        {
+            canBeDamaged = false;
+            playerHealthBar.health -= 5;
+        }
+    }
+
+    
 }

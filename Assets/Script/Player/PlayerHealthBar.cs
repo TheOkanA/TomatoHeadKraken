@@ -11,8 +11,6 @@ public class PlayerHealthBar : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        //healthBar = GetComponent<Slider>();
-
         healthBar.value = health;
     }
 
