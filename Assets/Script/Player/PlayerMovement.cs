@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     
     private float horizontal = 0;
-    [SerializeField] private float speed = 5;
+    [SerializeField] private float speed = 4;
     [SerializeField] private float jumpPower = 5;
     [SerializeField] private bool isFacingRight = true;
     [SerializeField] private Transform groundCheck;
