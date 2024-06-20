@@ -77,7 +77,18 @@ public class PlayerMovement : MonoBehaviour
         {
             canBeDamaged = false;
             playerHealthBar.health -= 5;
+            Invoke("CanBeDamaged", 2f);
         }
+
+        if(other.CompareTag("LowDamage") && canBeDamaged)
+        {
+            playerHealthBar.health -= 2;
+        }
+    }
+
+    public void CanBeDamaged()
+    {
+        canBeDamaged = true;
     }
 
     
