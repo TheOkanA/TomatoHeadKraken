@@ -9,6 +9,7 @@ TagManager:
   - AttackArea
   - HighDamage
   - LowDamage
+  - GasDamage
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Gas
+    uniqueID: 1031402057
     locked: 0

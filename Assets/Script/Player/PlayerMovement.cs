@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isGround;
     [SerializeField] private bool canBeDamaged = true;
 
+    public bool inGas = false;
+
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
@@ -41,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if(Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer))
+        if(Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer))
         {
             isGround = true;
             speed = 3;
@@ -53,6 +55,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
+
+        if(inGas)
+        {
+            if(canBeDamaged)
+            {
+                canBeDamaged = false;
+                playerHealthBar.health--;
+                Invoke("CanBeDamaged", 0.8f);
+            }
+            
+        }
     }
 
     private void FixedUpdate()
@@ -84,12 +97,23 @@ public class PlayerMovement : MonoBehaviour
         {
             playerHealthBar.health -= 2;
         }
+
+        if(other.CompareTag("GasDamage"))
+        {
+            inGas = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.CompareTag("GasDamage"))
+        {
+            inGas = false;
+        }
     }
 
     public void CanBeDamaged()
     {
         canBeDamaged = true;
     }
-
-    
 }
