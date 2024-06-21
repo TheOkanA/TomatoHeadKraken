@@ -8,8 +8,10 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public bool isMoving;
+    public bool isDeath = false;
     public PlayerHealthBar playerHealthBar;
-    
+    public int scene;
+
     private float horizontal = 0;
     public float speed = 3;
     [SerializeField] private float jumpPower = 5;
@@ -28,9 +30,9 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
 
-        if(rb.velocity.x != 0)
+        if (rb.velocity.x != 0)
         {
-            isMoving = true;   
+            isMoving = true;
         }
         else
         {
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         animator.SetBool("isMoving", isMoving);
+        animator.SetBool("isDeath", isDeath);
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -47,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if(Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer))
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer))
         {
             isGround = true;
         }
@@ -58,16 +61,16 @@ public class PlayerMovement : MonoBehaviour
 
         Flip();
 
-        if(inGas)
+        if (inGas)
         {
-            if(canBeDamaged)
+            if (canBeDamaged)
             {
                 canBeDamaged = false;
                 playerHealthBar.health--;
-                LifeCheck(sceneNumber);
+                LifeCheck();
                 Invoke("CanBeDamaged", 0.8f);
             }
-            
+
         }
     }
 
@@ -89,36 +92,42 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("HighDamage") && canBeDamaged)
+        if (other.CompareTag("HighDamage") && canBeDamaged)
         {
             canBeDamaged = false;
             playerHealthBar.health -= 5;
-            LifeCheck(sceneNumber);
+            LifeCheck();
             Invoke("CanBeDamaged", 2f);
         }
 
-        if(other.CompareTag("LowDamage") && canBeDamaged)
+        if (other.CompareTag("LowDamage") && canBeDamaged)
         {
             playerHealthBar.health -= 2;
-            LifeCheck(sceneNumber);
+            LifeCheck();
         }
 
-        if(other.CompareTag("GasDamage"))
+        if (other.CompareTag("GasDamage"))
         {
             inGas = true;
         }
 
-        if(other.CompareTag("Wine"))
+        if (other.CompareTag("Wine"))
         {
             playerHealthBar.health -= 1;
             Invoke("CanBeDamaged", 1f);
-            LifeCheck(sceneNumber);
+            LifeCheck();
+        }
+
+        if (other.CompareTag("Spike"))
+        {
+            playerHealthBar.health -= 100;
+            LifeCheck();
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if(other.CompareTag("GasDamage"))
+        if (other.CompareTag("GasDamage"))
         {
             inGas = false;
         }
@@ -129,12 +138,20 @@ public class PlayerMovement : MonoBehaviour
         canBeDamaged = true;
     }
 
-    public void LifeCheck(int scene)
+    public void LifeCheck()
     {
-        if(playerHealthBar.health <= 0)
+        if (playerHealthBar.health <= 0)
         {
             print("You lose");
-            SceneManager.LoadScene(scene);
+            isDeath = true;
+            Invoke("LoadScene", 0.8f);
         }
     }
+
+    void LoadScene()
+    {
+        SceneManager.LoadScene(scene);
+    }
+
 }
+

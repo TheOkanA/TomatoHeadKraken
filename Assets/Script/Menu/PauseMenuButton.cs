@@ -15,7 +15,6 @@ public class PauseMenuButton : MonoBehaviour
         Quit = GameObject.Find("Quit");
         PausePanel = GameObject.Find("PausePanel");
         PausePanel.SetActive(false);
-
     }
     private void Update()
     {

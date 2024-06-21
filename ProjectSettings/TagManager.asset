@@ -11,6 +11,7 @@ TagManager:
   - LowDamage
   - GasDamage
   - Wine
+  - Spike
   layers:
   - Default
   - TransparentFX
