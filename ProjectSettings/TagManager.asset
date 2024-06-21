@@ -10,6 +10,7 @@ TagManager:
   - HighDamage
   - LowDamage
   - GasDamage
+  - Wine
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: Gas
     uniqueID: 1031402057
+    locked: 0
+  - name: UI
+    uniqueID: 666435085
     locked: 0

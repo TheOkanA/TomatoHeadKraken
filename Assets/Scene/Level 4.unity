@@ -3605,7 +3605,7 @@ GameObject:
   - component: {fileID: 117390052}
   m_Layer: 0
   m_Name: WineMech
-  m_TagString: Untagged
+  m_TagString: Wine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3619,8 +3619,8 @@ Transform:
   m_GameObject: {fileID: 117390050}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2237296, y: -2.8182883, z: 5.6123414}
-  m_LocalScale: {x: 1.401, y: 1.6216, z: 1}
+  m_LocalPosition: {x: -4.2237296, y: -4.01, z: 5.6123414}
+  m_LocalScale: {x: 1.401, y: 2.82, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2104666097}
@@ -3748,7 +3748,7 @@ Transform:
   m_GameObject: {fileID: 299177403}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.3, y: -0.56171155, z: -5.6123414}
+  m_LocalPosition: {x: 5.36, y: -2.3600001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3782,7 +3782,7 @@ Transform:
   m_GameObject: {fileID: 389152430}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.54, y: -0.56171155, z: -5.6123414}
+  m_LocalPosition: {x: 4.6, y: -2.3600001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3934,7 +3934,7 @@ Transform:
   m_GameObject: {fileID: 502471581}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.68, y: -2.98, z: 0}
+  m_LocalPosition: {x: -3.68, y: -4.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3965,7 +3965,7 @@ Transform:
   m_GameObject: {fileID: 505638941}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.88, y: -0.56171155, z: -5.6123414}
+  m_LocalPosition: {x: 1.94, y: -2.3600001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4121,7 +4121,7 @@ Transform:
   m_GameObject: {fileID: 643140472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.89, y: -0.23000002, z: 0}
+  m_LocalPosition: {x: -3.89, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4137,6 +4137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 734828774}
   - component: {fileID: 734828773}
+  - component: {fileID: 734828775}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4174,6 +4175,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &734828775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734828772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ae44db0d06fc84aafad73bde701d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTotal: 0
 --- !u!1001 &745476272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4184,11 +4198,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 800301240305899746, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.2086053
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 800301240305899746, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6417959
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 800301240305899746, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4223,17 +4237,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 959631025189619852, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
+      propertyPath: life1
+      value: 
+      objectReference: {fileID: 2103472471}
+    - target: {fileID: 959631025189619852, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
+      propertyPath: life2
+      value: 
+      objectReference: {fileID: 1907709715}
+    - target: {fileID: 959631025189619852, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
+      propertyPath: life3
+      value: 
+      objectReference: {fileID: 1488435235}
+    - target: {fileID: 959631025189619852, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
+      propertyPath: lifeManager
+      value: 
+      objectReference: {fileID: 734828775}
+    - target: {fileID: 959631025189619852, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
       propertyPath: playerHealthBar
       value: 
       objectReference: {fileID: 734828773}
-    - target: {fileID: 1959746423386507518, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1959746423386507518, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1088700311
-      objectReference: {fileID: 0}
     - target: {fileID: 4722005477429558481, guid: 2c56de36fff80984eab0ee9651a939d5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4280,7 +4302,7 @@ Transform:
   m_GameObject: {fileID: 829456681}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.26595744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4334,7 +4356,7 @@ GameObject:
   - component: {fileID: 833089125}
   m_Layer: 0
   m_Name: WineMech
-  m_TagString: Untagged
+  m_TagString: Wine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4348,8 +4370,8 @@ Transform:
   m_GameObject: {fileID: 833089123}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9737296, y: -2.8182883, z: 5.6123414}
-  m_LocalScale: {x: 1.401, y: 1.6216, z: 1}
+  m_LocalPosition: {x: -3.9737296, y: -4.01, z: 5.6123414}
+  m_LocalScale: {x: 1.401, y: 2.82, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1316021606}
@@ -4477,7 +4499,7 @@ Transform:
   m_GameObject: {fileID: 844136477}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.89, y: -2.98, z: 0}
+  m_LocalPosition: {x: -3.89, y: -4.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4551,7 +4573,7 @@ Transform:
   m_GameObject: {fileID: 872530898}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.15, y: -0.99, z: 0}
+  m_LocalPosition: {x: 1.21, y: -0.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4730,7 +4752,7 @@ Transform:
   m_GameObject: {fileID: 895139328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.24, y: -2.98, z: 0}
+  m_LocalPosition: {x: -3.24, y: -4.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4760,7 +4782,7 @@ GameObject:
   - component: {fileID: 974236939}
   m_Layer: 0
   m_Name: WineMech
-  m_TagString: Untagged
+  m_TagString: Wine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4774,8 +4796,8 @@ Transform:
   m_GameObject: {fileID: 974236937}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.72373, y: -2.8182883, z: 5.6123414}
-  m_LocalScale: {x: 1.401, y: 1.6216, z: 1}
+  m_LocalPosition: {x: -3.72373, y: -4.01, z: 5.6123414}
+  m_LocalScale: {x: 1.401, y: 2.82, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1150029231}
@@ -5008,7 +5030,7 @@ GameObject:
   - component: {fileID: 1036668969}
   m_Layer: 0
   m_Name: WineMech
-  m_TagString: Untagged
+  m_TagString: Wine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5022,8 +5044,8 @@ Transform:
   m_GameObject: {fileID: 1036668967}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9737296, y: -2.8182883, z: 5.6123414}
-  m_LocalScale: {x: 1.401, y: 1.6216, z: 1}
+  m_LocalPosition: {x: -3.9737296, y: -4.01, z: 5.6123414}
+  m_LocalScale: {x: 1.401, y: 2.82, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1252216965}
@@ -5151,7 +5173,7 @@ Transform:
   m_GameObject: {fileID: 1088446055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.93, y: -2.98, z: 0}
+  m_LocalPosition: {x: -3.93, y: -4.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5182,7 +5204,7 @@ Transform:
   m_GameObject: {fileID: 1113603554}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.07, y: -0.56171155, z: -5.6123414}
+  m_LocalPosition: {x: 3.13, y: -2.3600001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5217,7 +5239,7 @@ Transform:
   m_GameObject: {fileID: 1150029230}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.26595744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5283,7 +5305,7 @@ Transform:
   m_GameObject: {fileID: 1212026391}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.13, y: -0.23000002, z: 0}
+  m_LocalPosition: {x: -4.13, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5315,7 +5337,7 @@ Transform:
   m_GameObject: {fileID: 1252216964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.26595744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5382,7 +5404,7 @@ Transform:
   m_GameObject: {fileID: 1282347665}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.26595744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5449,7 +5471,7 @@ Transform:
   m_GameObject: {fileID: 1316021605}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.26595744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5515,7 +5537,7 @@ Transform:
   m_GameObject: {fileID: 1377472224}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.13, y: -2.98, z: 0}
+  m_LocalPosition: {x: -4.13, y: -4.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5546,12 +5568,17 @@ Transform:
   m_GameObject: {fileID: 1462782056}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.45, y: -2.98, z: 0}
+  m_LocalPosition: {x: -3.45, y: -4.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2114381138}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1488435235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4158569708566808096, guid: 766eadf2c9c7dcf48ba22a1dad20ca53, type: 3}
+  m_PrefabInstance: {fileID: 481319189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1590998088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5565,7 +5592,7 @@ GameObject:
   - component: {fileID: 1590998090}
   m_Layer: 0
   m_Name: WineMech
-  m_TagString: Untagged
+  m_TagString: Wine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5579,8 +5606,8 @@ Transform:
   m_GameObject: {fileID: 1590998088}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.47373, y: -2.8182883, z: 5.6123414}
-  m_LocalScale: {x: 1.401, y: 1.6216, z: 1}
+  m_LocalPosition: {x: -3.47373, y: -4.01, z: 5.6123414}
+  m_LocalScale: {x: 1.401, y: 2.82, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 829456682}
@@ -5753,7 +5780,7 @@ Transform:
   m_GameObject: {fileID: 1636293357}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.45, y: -0.23000002, z: 0}
+  m_LocalPosition: {x: -3.45, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5784,12 +5811,17 @@ Transform:
   m_GameObject: {fileID: 1747620679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.24, y: -0.23000002, z: 0}
+  m_LocalPosition: {x: -3.24, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 299177404}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1907709715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5643586403815252156, guid: 766eadf2c9c7dcf48ba22a1dad20ca53, type: 3}
+  m_PrefabInstance: {fileID: 481319189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2065795056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5803,7 +5835,7 @@ GameObject:
   - component: {fileID: 2065795058}
   m_Layer: 0
   m_Name: WineMech
-  m_TagString: Untagged
+  m_TagString: Wine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5817,8 +5849,8 @@ Transform:
   m_GameObject: {fileID: 2065795056}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.22373, y: -2.8182883, z: 5.6123414}
-  m_LocalScale: {x: 1.401, y: 1.6216, z: 1}
+  m_LocalPosition: {x: -3.22373, y: -4.01, z: 5.6123414}
+  m_LocalScale: {x: 1.401, y: 2.82, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1282347666}
@@ -5946,12 +5978,17 @@ Transform:
   m_GameObject: {fileID: 2081469140}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.68, y: -0.23000002, z: 0}
+  m_LocalPosition: {x: -3.68, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2112536753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2103472471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8594886744996524347, guid: 766eadf2c9c7dcf48ba22a1dad20ca53, type: 3}
+  m_PrefabInstance: {fileID: 481319189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2104666096
 GameObject:
   m_ObjectHideFlags: 0
@@ -5978,7 +6015,7 @@ Transform:
   m_GameObject: {fileID: 2104666096}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.26595744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6044,7 +6081,7 @@ Transform:
   m_GameObject: {fileID: 2112536752}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.3, y: -0.56171155, z: -5.6123414}
+  m_LocalPosition: {x: 8.360001, y: -2.3600001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6078,7 +6115,7 @@ Transform:
   m_GameObject: {fileID: 2114381137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.77, y: -0.56171155, z: -5.6123414}
+  m_LocalPosition: {x: 6.8300004, y: -2.3600001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6112,7 +6149,7 @@ Transform:
   m_GameObject: {fileID: 2121018946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.93, y: -0.23000002, z: 0}
+  m_LocalPosition: {x: -3.93, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

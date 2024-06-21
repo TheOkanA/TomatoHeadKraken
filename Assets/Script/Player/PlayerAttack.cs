@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject attackArea;
     [SerializeField] private bool canAttack = true;
     public Animator animator;
+    public float attackSpeed = 0.75f;
 
     public void PlayerAttackStart()
     {
@@ -23,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
             attackArea.SetActive(true);
             yield return new WaitForSeconds(0.1f);
             attackArea.SetActive(false);
-            yield return new WaitForSeconds(0.75f);
+            yield return new WaitForSeconds(attackSpeed);
             canAttack = true;
         }
     }

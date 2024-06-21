@@ -29,13 +29,13 @@ public class BossWines : MonoBehaviour
             case 0:
             timer++;
             goUp = true;
-            Invoke("Timer", 2f);
+            Invoke("Timer", 1f);
             break;
 
             case 1:
             timer--;
             goUp = false;
-            Invoke("Timer", 2f);
+            Invoke("Timer", 1f);
             break;
         }
     }
@@ -64,7 +64,7 @@ public class BossWines : MonoBehaviour
 
     public void WineSpawner(Transform wine, int range2)
     {
-        wine.transform.position = Vector2.MoveTowards(wine.transform.position, winepoints[range2].transform.position, 2 * Time.deltaTime);
+        wine.transform.position = Vector2.MoveTowards(wine.transform.position, winepoints[range2].transform.position, 4 * Time.deltaTime);
     }
 
     public void WineDestroyer(Transform wine, int range2)

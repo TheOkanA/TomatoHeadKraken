@@ -78,8 +78,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1088700311
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d95776f5a81f220478e93fdf3fcd4370, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -180,6 +180,10 @@ MonoBehaviour:
   isGround: 0
   canBeDamaged: 1
   inGas: 0
+  lifeManager: {fileID: 0}
+  life1: {fileID: 0}
+  life2: {fileID: 0}
+  life3: {fileID: 0}
 --- !u!114 &7680453450915021791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +391,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.5
 --- !u!1 &7117982179276355817
 GameObject:
   m_ObjectHideFlags: 0

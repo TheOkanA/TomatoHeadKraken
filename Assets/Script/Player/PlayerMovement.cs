@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerHealthBar playerHealthBar;
     
     private float horizontal = 0;
-    [SerializeField] private float speed = 3;
+    public float speed = 3;
     [SerializeField] private float jumpPower = 5;
     [SerializeField] private bool isFacingRight = true;
     [SerializeField] private Transform groundCheck;
@@ -19,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool canBeDamaged = true;
 
     public bool inGas = false;
+
+    public GameObject life1, life2, life3;
+    public int sceneNumber = 0;
 
     void Update()
     {
@@ -46,12 +50,10 @@ public class PlayerMovement : MonoBehaviour
         if(Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer))
         {
             isGround = true;
-            speed = 3;
         }
         else
         {
             isGround = false;
-            speed = 2;
         }
 
         Flip();
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 canBeDamaged = false;
                 playerHealthBar.health--;
+                LifeCheck(sceneNumber);
                 Invoke("CanBeDamaged", 0.8f);
             }
             
@@ -90,17 +93,26 @@ public class PlayerMovement : MonoBehaviour
         {
             canBeDamaged = false;
             playerHealthBar.health -= 5;
+            LifeCheck(sceneNumber);
             Invoke("CanBeDamaged", 2f);
         }
 
         if(other.CompareTag("LowDamage") && canBeDamaged)
         {
             playerHealthBar.health -= 2;
+            LifeCheck(sceneNumber);
         }
 
         if(other.CompareTag("GasDamage"))
         {
             inGas = true;
+        }
+
+        if(other.CompareTag("Wine"))
+        {
+            playerHealthBar.health -= 1;
+            Invoke("CanBeDamaged", 1f);
+            LifeCheck(sceneNumber);
         }
     }
 
@@ -115,5 +127,14 @@ public class PlayerMovement : MonoBehaviour
     public void CanBeDamaged()
     {
         canBeDamaged = true;
+    }
+
+    public void LifeCheck(int scene)
+    {
+        if(playerHealthBar.health <= 0)
+        {
+            print("You lose");
+            SceneManager.LoadScene(scene);
+        }
     }
 }
