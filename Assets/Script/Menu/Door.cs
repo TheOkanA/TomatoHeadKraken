@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
+    public int sceneToLoad;
     void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(sceneToLoad);
     }
 }
